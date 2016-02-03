@@ -21,7 +21,5 @@ data %>%
 	filter(date == "2/2/2016") %>% 
 	group_by(beaker.code) %>% 
 	ggplot(., aes(x = time, y = cell.count, color = beaker.code)) + geom_point(size = 3)
-
-
 ```
 
