@@ -25,3 +25,19 @@ data %>%
 
 ![](Jan28-trials_files/figure-html/unnamed-chunk-1-2.png) 
 
+```r
+data %>% 
+	group_by(beaker.code) %>% 
+	filter(date == "2/2/2016") %>% 
+	summarise(drawdown = max(cell.count) - min(cell.count)) %>%
+	knitr::kable(.)
+```
+
+
+
+beaker.code    drawdown
+------------  ---------
+A                  7071
+B                  4883
+C                  6566
+
