@@ -13,6 +13,11 @@ library(ggplot2)
 
 data <- read.csv("/Users/Joey/Documents/mussel-TPC/mussel-TPC/01-28-16-cell-counts-trial.csv")
 
+datam <- read.csv("/Users/Joey/Documents/mussel-length.csv")
+
+hist(datam$Salinity)
+max(datam$Salinity)
+
 data %>% 
 	filter(beaker.code == "E") %>% 
 	ggplot(., aes(x = time, y = cell.count)) + geom_point()
@@ -27,6 +32,5 @@ data %>%
 	filter(date == "2/2/2016") %>% 
 	summarise(drawdown = max(cell.count) - min(cell.count)) %>%
 	knitr::kable(.)
-
 ```
 
